@@ -1,0 +1,5 @@
+" Update Font
+set guifont=Monaco:h13
+
+" Fix jslint.vim plugin failure by redirecting to node
+let $JS_CMD='node'
