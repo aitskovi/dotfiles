@@ -1,9 +1,5 @@
 #!/bin/bash
 
-alias irc="ssh aitskovi@taurine.csclub.uwaterloo.ca"
-alias school="cd ~/Dropbox/Courses/"
-alias open="xdg-open > /dev/null 2>&1"
-
 # Git Aliases
 alias gs="git status -sb"
 alias gl="git log"
