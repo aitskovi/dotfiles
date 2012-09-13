@@ -10,5 +10,6 @@ alias gf="git fetch --all"
 alias gri="git rebase -i"
 alias gr="git rebase"
 alias gpo="git push origin"
+alias gap="git add -p"
 
 
