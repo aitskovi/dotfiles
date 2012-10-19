@@ -27,8 +27,6 @@ GIT_PS1_SHOWUPSTREAM=git
 # Default Editors
 export SVN_EDITOR=vim
 
-# expand PATH to os161
-export PATH=$HOME/sys161/bin:$HOME/sys161/tools/bin:$PATH
-export PATH=/usr/share/smlnj/bin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
-export CVSROOT=~/cvsroot/cs350
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
