@@ -25,3 +25,8 @@ ln -s ${dir}/gvimrc ~/.gvimrc
 backup ~/.vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+# Add all vim plugins
+cd ~/.vim/bundle
+git clone git://github.com/scrooloose/nerdcommenter.git
+git clone git://github.com/kien/ctrlp.vim.git
