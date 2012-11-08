@@ -19,9 +19,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Remap nerdtree to a hotkey
-map <Leader>n :NERDTreeToggle<CR>
-
 " Add a Latex command to create pdf files from tex
 command Latex :!pdflatex %
 
@@ -41,3 +38,5 @@ if &term =~ "xterm" || &term =~ "screen"
     let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
     let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 endif
+
+colorscheme solarized

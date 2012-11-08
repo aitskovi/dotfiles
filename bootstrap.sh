@@ -30,3 +30,4 @@ curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/
 cd ~/.vim/bundle
 git clone git://github.com/scrooloose/nerdcommenter.git
 git clone git://github.com/kien/ctrlp.vim.git
+git clone https://github.com/altercation/vim-colors-solarized
