@@ -30,3 +30,5 @@ export SVN_EDITOR=vim
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+
+export PATH='/usr/local/bin':$PATH
