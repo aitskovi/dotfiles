@@ -3,7 +3,7 @@
 function backup() {
     if [ -e "${1}" ]; then
 	echo "Backing up ${1}";
-        mv ${1} ${1}.backup
+        mv ${1} ${1}.backup.$$
     fi
 }
 
