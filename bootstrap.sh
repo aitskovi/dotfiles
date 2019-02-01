@@ -10,7 +10,6 @@ function backup() {
 # Back up old dotfiles
 backup ~/.bashrc
 backup ~/.vimrc
-backup ~/.gvimrc
 backup ~/.bash_aliases
 
 dir=`pwd`
@@ -19,15 +18,32 @@ dir=`pwd`
 ln -s ${dir}/bashrc ~/.bashrc
 ln -s ${dir}/bash_aliases ~/.bash_aliases
 ln -s ${dir}/vimrc ~/.vimrc
-ln -s ${dir}/gvimrc ~/.gvimrc
 
-# Initialize pathogen
-backup ~/.vim
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+# ************
+#  Set-up vim
+# ************
 
-# Add all vim plugins
-cd ~/.vim/bundle
-git clone git://github.com/scrooloose/nerdcommenter.git
-git clone git://github.com/kien/ctrlp.vim.git
-git clone https://github.com/altercation/vim-colors-solarized
+# 1. Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# 2. Create backup folder
+mkdir ~/.vim/.backup/
+
+# *****************
+#  Set-up Terminal
+# *****************
+
+# 1. Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# 2. Install utils
+brew install z
+brew install rbenv
+brew install ag
+brew install tmux
+brew install reattach-to-user-namespace
+
+# Set screenshots to write to Google Drive
+defaults write com.apple.screencapture location ~/Google\ Drive/Screenshots/
+killall SystemUIServer
