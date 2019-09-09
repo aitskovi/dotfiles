@@ -19,6 +19,10 @@ ln -s ${dir}/bashrc ~/.bashrc
 ln -s ${dir}/bash_aliases ~/.bash_aliases
 ln -s ${dir}/vimrc ~/.vimrc
 
+# Install homebrew
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # ************
 #  Set-up vim
 # ************
@@ -40,9 +44,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # 2. Install utils
 brew install z
 brew install rbenv
+brew install pyenv
 brew install ag
 brew install tmux
 brew install reattach-to-user-namespace
+brew install fzf
+
+# 3. Install applications
+brew tap caskroom/cask
+brew cask install spectacle
+brew cask install iterm2
+brew cask install google-backup-and-sync
+brew cask install notion
 
 # Set screenshots to write to Google Drive
 defaults write com.apple.screencapture location ~/Google\ Drive/Screenshots/
