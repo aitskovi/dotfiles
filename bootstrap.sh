@@ -52,6 +52,7 @@ brew install fzf
 
 # 3. Install applications
 brew tap caskroom/cask
+brew cask install google-chrome
 brew cask install spectacle
 brew cask install iterm2
 brew cask install google-backup-and-sync
