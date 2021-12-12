@@ -1,0 +1,24 @@
+[push]
+  default = simple
+
+[alias]
+  cleanup = "!git branch --no-color --merged | grep -v '\\*\\|main\\|develop' | xargs -n 1 git branch -d && git remote prune origin && git prune && :"
+
+        # Get the current branch name (not so useful in itself, but used in
+        # other aliases)
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+        # Push the current branch to the remote "origin", and set it to track
+        # the upstream branch
+  publish = "!git push -u origin $(git branch-name)"
+
+  delete-merged-branches = "!git checkout main && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+  delete-squashed-branches = "!git checkout -q main && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done"
+
+
+[branch "main"]
+  mergeoptions = --ff-only
+
+[branch "master"]
+  mergeoptions = --ff-only
