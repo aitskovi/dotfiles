@@ -51,10 +51,11 @@ brew install reattach-to-user-namespace
 brew install fzf
 
 # 3. Install applications
-brew tap caskroom/cask
-brew cask install google-chrome
-brew cask install spectacle
-brew cask install iterm2
+brew install --cask google-chrome
+brew install --cask spectacle
+brew install --cask iterm2
+brew install --cask raycast
+
 
 # Set screenshots to write to Google Drive
 defaults write com.apple.screencapture location ~/Google\ Drive/Screenshots/
