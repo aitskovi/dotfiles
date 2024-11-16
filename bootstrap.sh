@@ -21,7 +21,7 @@ ln -s ${dir}/vimrc ~/.vimrc
 
 # Install homebrew
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # ************
 #  Set-up vim
@@ -55,8 +55,6 @@ brew tap caskroom/cask
 brew cask install google-chrome
 brew cask install spectacle
 brew cask install iterm2
-brew cask install google-backup-and-sync
-brew cask install notion
 
 # Set screenshots to write to Google Drive
 defaults write com.apple.screencapture location ~/Google\ Drive/Screenshots/
